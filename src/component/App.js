@@ -1,19 +1,24 @@
 import React from "react";
 import { fetchPizza } from "../pizza";
+import PizzaList from "../../src/component/PizzaList";
 
 class App extends React.Component {
   state = {
-    PizzaList: []
+    pizzaList: []
   };
 
   componentDidMount() {
     fetchPizza().then(res => {
-      this.setState({ PizzaList: res });
+      this.setState({ pizzaList: res.pizzas });
     });
   }
 
   render() {
-    return <main>Hello</main>;
+    return (
+      <main>
+        <PizzaList pizzaList={this.state.pizzaList} />
+      </main>
+    );
   }
 }
 

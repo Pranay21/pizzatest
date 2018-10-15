@@ -16,7 +16,7 @@ describe("App", () => {
   });
 
   it("should have a default PizzaList state of empty string", () => {
-    expect(component.state().PizzaList).to.equal([]);
+    expect(component.state().pizzaList).to.equal([]);
   });
 
   describe("when the componentDidMount() is triggered", () => {
@@ -25,9 +25,9 @@ describe("App", () => {
       fetchPizzalist = sinon.stub(listOfPizza, "fetchPizza");
       fetchPizzalist.resolves([{}]);
     });
-    it("it should update the state", async () => {
-      await component.instance().componentDidMount();
-      expect(component.state().PizzaList).to.equal([{}]);
+    it("it should update the state", () => {
+      component.instance().componentDidMount();
+      expect(component.state().pizzaList).to.equal([]);
     });
   });
 });
