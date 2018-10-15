@@ -9,4 +9,7 @@ describe("Given SortButton", () => {
   it("should exist as 'form'", () => {
     expect(component.is("form.sortbutton")).to.be.true();
   });
+  it("should contain a <button> and text <search>", () => {
+    expect(component.find("button.pizzaSort")).to.have.length(1);
+  });
 });
