@@ -14,13 +14,11 @@ class App extends React.Component {
     });
   }
 
-  sortButton = () => {};
-
   render() {
     return (
       <main>
+        <SortButton handleSortButton={this.handleSortButton} />
         <PizzaList pizzaList={this.state.pizzaList} />
-        <SortButton SortButton={this.sortButton} />
       </main>
     );
   }
