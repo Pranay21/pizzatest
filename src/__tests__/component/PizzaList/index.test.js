@@ -17,4 +17,12 @@ describe("Given RepoList", () => {
       expect(component.find("li").length).to.equal(0);
     });
   });
+  describe("when the list has PizzaList", () => {
+    it("should render PizzaItems", () => {
+      const component = renderPizzaList({
+        pizzaList: [{ pizzas: "test1" }]
+      });
+      expect(component.find("li").length).to.equal(1);
+    });
+  });
 });
