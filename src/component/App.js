@@ -14,6 +14,11 @@ class App extends React.Component {
     });
   }
 
+  handleSortButton = () => {
+    const sortedPizzaList = [...this.state.pizzaList].sort();
+    this.setState({ pizzaList: sortedPizzaList });
+  };
+
   render() {
     return (
       <main>
