@@ -23,5 +23,16 @@ describe("Given the Pizza Api", () => {
         });
       });
     });
+
+    describe("when the call is unsuccessful", () => {
+      beforeEach(() => {
+        fetchStub.rejects({ message: "Sorry can't fetch the data" });
+      });
+      it("should throw error", () => {
+        fetchPizza().then(() => {
+          expect(true).to.be.false();
+        });
+      });
+    });
   });
 });
