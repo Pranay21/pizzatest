@@ -6,6 +6,12 @@ class App extends React.Component {
     PizzaList: []
   };
 
+  componentDidMount() {
+    fetchPizza().then(res => {
+      this.setState({ PizzaList: res });
+    });
+  }
+
   render() {
     return <main>Hello</main>;
   }
