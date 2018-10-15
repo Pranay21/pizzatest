@@ -17,12 +17,18 @@ describe("Given RepoList", () => {
       expect(component.find("li").length).to.equal(0);
     });
   });
-  describe("when the list has PizzaList", () => {
+  describe("when the list has valid PizzaList", () => {
     it("should render PizzaItems", () => {
       const component = renderPizzaList({
         pizzaList: [{ pizzas: "test1" }]
       });
       expect(component.find("li").length).to.equal(1);
+    });
+  });
+  describe("when the list is not valid", () => {
+    it("should display a message", () => {
+      const component = renderPizzaList({ pizzaList: "gvsjhv" });
+      expect(component.find("p").text()).to.equal("Invalid User");
     });
   });
 });
