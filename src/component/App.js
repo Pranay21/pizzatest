@@ -1,12 +1,9 @@
-import React from "react"
+import React from "react";
 
-class App extends React.Component{
-
-    render(){
-        return(
-        <div></div>
-        )
-    }
+class App extends React.Component {
+  render() {
+    return <main />;
+  }
 }
 
-export default App
+export default App;
