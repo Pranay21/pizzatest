@@ -18,6 +18,12 @@ describe("App", () => {
   it("should have a default PizzaList state of empty string", () => {
     expect(component.state().pizzaList).to.equal([]);
   });
+  it("should be a <PizzaList>", () => {
+    expect(component.find("PizzaList").exists()).to.be.true();
+  });
+  it("should be a <SortButton>", () => {
+    expect(component.find("SortButton").exists()).to.be.true();
+  });
 
   describe("when the componentDidMount() is triggered", () => {
     let fetchPizzalist;
