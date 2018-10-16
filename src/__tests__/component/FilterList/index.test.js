@@ -15,10 +15,7 @@ describe("Given FilterList", () => {
   it("should contain an input", () => {
     expect(component.find("input")).to.have.length(1);
   });
-  it("should contain a <button> and text <search>", () => {
-    expect(component.find("button")).to.have.length(1);
-    expect(component.find("button").text()).to.equal("Search");
-  });
+
   it("should have a default state of searchText as empty string", () => {
     expect(component.state().searchText).to.equal("");
   });

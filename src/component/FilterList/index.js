@@ -13,7 +13,6 @@ class FilterList extends React.Component {
     return (
       <form>
         <input value={this.state.searchText} onChange={this.handleFilter} />
-        <button>Search</button>
       </form>
     );
   }
