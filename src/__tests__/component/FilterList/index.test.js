@@ -12,4 +12,7 @@ describe("Given FilterList", () => {
   it("should exist as 'form'", () => {
     expect(component.is("form")).to.be.true();
   });
+  it("should contain an input", () => {
+    expect(component.find("input")).to.have.length(1);
+  });
 });
