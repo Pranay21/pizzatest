@@ -6,8 +6,8 @@ class FilterList extends React.Component {
   };
 
   handleFilter = e => {
-    const searchText = e.target.value;
-    this.setState({ searchText });
+    this.setState({ searchText: e.target.value });
+    this.props.handleFilter(e.target.value);
   };
   render() {
     return (
