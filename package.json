@@ -28,5 +28,11 @@
     "enzyme-adapter-react-16": "^1.6.0",
     "prettier": "^1.14.3",
     "sinon": "^7.0.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/src/index.js"
+    ]
   }
 }

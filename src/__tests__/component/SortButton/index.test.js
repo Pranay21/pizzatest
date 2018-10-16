@@ -15,12 +15,7 @@ describe("Given SortButton", () => {
   it("should exist as 'form'", () => {
     expect(component.is("form.sortbutton")).to.be.true();
   });
-  it("should contain a <button> and text <search>", () => {
+  it("should contain a <button> ", () => {
     expect(component.find("button.pizzaSort")).to.have.length(1);
-  });
-  describe("When the Sort button is clicked", () => {
-    beforeEach(() => {
-      component.simulate("onClick", { preventDefault: sinon.spy() });
-    });
   });
 });
