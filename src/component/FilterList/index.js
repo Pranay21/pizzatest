@@ -5,6 +5,7 @@ class FilterList extends React.Component {
     return (
       <form>
         <input />
+        <button>Search</button>
       </form>
     );
   }
