@@ -5,7 +5,8 @@ import SortButton from "../../src/component/SortButton";
 
 class App extends React.Component {
   state = {
-    pizzaList: []
+    pizzaList: [],
+    FilterPizzaList: []
   };
 
   componentDidMount() {

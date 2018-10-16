@@ -22,6 +22,9 @@ describe("App", () => {
   it("should have a default PizzaList state of empty string", () => {
     expect(component.state().pizzaList).to.equal([]);
   });
+  it("should have a default FilterPizzaList state of empty string", () => {
+    expect(component.state().FilterPizzaList).to.equal([]);
+  });
   it("should be a <PizzaList>", () => {
     expect(component.find("PizzaList").exists()).to.be.true();
   });
