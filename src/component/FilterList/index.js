@@ -11,8 +11,12 @@ class FilterList extends React.Component {
   };
   render() {
     return (
-      <form>
-        <input value={this.state.searchText} onChange={this.handleFilter} />
+      <form align="center">
+        <input
+          placeholder="Search for your pizza here"
+          value={this.state.searchText}
+          onChange={this.handleFilter}
+        />
       </form>
     );
   }

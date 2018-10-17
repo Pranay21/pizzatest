@@ -8,7 +8,8 @@ class SortButton extends React.Component {
 
   render() {
     return (
-      <form className="sortbutton">
+      <form align="center" className="sortbutton">
+        <br />
         <button className="pizzaSort" onClick={this.handleSortButton}>
           Sort
         </button>
