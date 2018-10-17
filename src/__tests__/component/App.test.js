@@ -1,38 +1,44 @@
 import React from "react";
 import { expect } from "code";
-import { shallow } from "enzyme";
+import { shallow, mount } from "enzyme";
 import App from "../../../src/component/App";
 import * as pizzaService from "../../pizza";
 import sinon from "sinon";
 
 describe("App", () => {
   let component;
+  let wrapper;
 
   beforeEach(() => {
     component = shallow(<App />);
+    wrapper = mount(<App />);
   });
   afterEach(() => {
     sinon.restore();
   });
 
-  it("should be a <main>", () => {
-    expect(component.type()).to.equal("main");
+  it("should have a <main>", () => {
+    expect(wrapper.find("main")).to.exist();
   });
 
   it("should have a default PizzaList state of empty string", () => {
-    expect(component.state().pizzaList).to.equal([]);
+    expect(wrapper.state().pizzaList).to.equal([]);
   });
   it("should have a default filterPizzaList state of empty string", () => {
-    expect(component.state().filterPizzaList).to.equal([]);
+    expect(wrapper.state().filterPizzaList).to.equal([]);
   });
+  it("should have a default loading state of empty string", () => {
+    expect(wrapper.state().loading).to.equal(true);
+  });
+
   it("should be a <PizzaList>", () => {
-    expect(component.find("PizzaList").exists()).to.be.true();
+    expect(wrapper.find("PizzaList")).to.exist();
   });
   it("should be a <SortButton>", () => {
-    expect(component.find("SortButton").exists()).to.be.true();
+    expect(wrapper.find("SortButton")).to.exist();
   });
   it("should be a <FilterList>", () => {
-    expect(component.find("FilterList").exists()).to.be.true();
+    expect(wrapper.find("FilterList")).to.exist();
   });
 
   describe("when the componentDidMount() is triggered", () => {
@@ -55,8 +61,8 @@ describe("App", () => {
     });
 
     it("it should update the state", async () => {
-      await component.instance().componentDidMount();
-      expect(component.state().pizzaList).to.equal([
+      await wrapper.instance().componentDidMount();
+      expect(wrapper.state().pizzaList).to.equal([
         "Sausage",
         "Cheese",
         "Pepperoni",

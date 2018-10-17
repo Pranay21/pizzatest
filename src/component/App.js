@@ -7,12 +7,17 @@ import FilterList from "../../src/component/FilterList";
 class App extends React.Component {
   state = {
     pizzaList: [],
-    filterPizzaList: []
+    filterPizzaList: [],
+    loading: true
   };
 
   componentDidMount() {
     fetchPizza().then(res => {
-      this.setState({ pizzaList: res.pizzas, filterPizzaList: res.pizzas });
+      this.setState({
+        pizzaList: res.pizzas,
+        filterPizzaList: res.pizzas,
+        loading: false
+      });
     });
   }
 
@@ -30,13 +35,17 @@ class App extends React.Component {
   };
 
   render() {
-    return (
-      <main>
-        <FilterList handleFilter={this.handleFilter} />
-        <SortButton handleSortButton={this.handleSortButton} />
-        <PizzaList pizzaList={this.state.pizzaList} />
-      </main>
-    );
+    if (this.state.loading) {
+      return <main>Loading...</main>;
+    } else {
+      return (
+        <main>
+          <FilterList handleFilter={this.handleFilter} />
+          <SortButton handleSortButton={this.handleSortButton} />
+          <PizzaList pizzaList={this.state.pizzaList} />
+        </main>
+      );
+    }
   }
 }
 
