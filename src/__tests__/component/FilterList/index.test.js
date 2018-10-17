@@ -12,10 +12,10 @@ describe("Given FilterList", () => {
     component = shallow(<FilterList handleFilter={handleFilterSpy} />);
   });
 
-  it("should exist as 'form'", () => {
+  it("should exist as a <form />", () => {
     expect(component.is("form")).to.be.true();
   });
-  it("should contain an input", () => {
+  it("should contain an <input />", () => {
     expect(component.find("input")).to.have.length(1);
   });
 

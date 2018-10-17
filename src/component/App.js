@@ -36,16 +36,16 @@ class App extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return <main>Loading...</main>;
-    } else {
-      return (
-        <main>
-          <FilterList handleFilter={this.handleFilter} />
-          <SortButton handleSortButton={this.handleSortButton} />
-          <PizzaList pizzaList={this.state.pizzaList} />
-        </main>
-      );
+      return <div>Loading...</div>;
     }
+
+    return (
+      <main>
+        <FilterList handleFilter={this.handleFilter} />
+        <SortButton handleSortButton={this.handleSortButton} />
+        <PizzaList pizzaList={this.state.pizzaList} />
+      </main>
+    );
   }
 }
 

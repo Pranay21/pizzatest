@@ -3,11 +3,11 @@ import { expect } from "code";
 import { shallow } from "enzyme";
 import PizzaList from "../../../component/PizzaList";
 
-describe("Given RepoList", () => {
+describe("Given PizzaList", () => {
   function renderPizzaList(props = {}) {
     return shallow(<PizzaList {...props} />);
   }
-  it("should be a <div/> with classname", () => {
+  it("should be a <div/> with classname pizzaList", () => {
     const component = renderPizzaList();
     expect(component.is("div.pizzaList")).to.be.true();
   });
@@ -28,7 +28,7 @@ describe("Given RepoList", () => {
   describe("when the list is not valid", () => {
     it("should display a message", () => {
       const component = renderPizzaList({ pizzaList: "gvsjhv" });
-      expect(component.find("p").text()).to.equal("Invalid User");
+      expect(component.find("p").text()).to.equal("Invalid Pizza");
     });
   });
 });

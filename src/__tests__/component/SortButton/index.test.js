@@ -6,10 +6,10 @@ import sinon from "sinon";
 
 describe("Given SortButton", () => {
   let component;
-  let handleSortSpy;
+  let handleSortButtonSpy;
   beforeEach(() => {
-    handleSortSpy = sinon.spy();
-    component = shallow(<SortButton handleSort={handleSortSpy} />);
+    handleSortButtonSpy = sinon.spy();
+    component = shallow(<SortButton handleSortButton={handleSortButtonSpy} />);
   });
 
   it("should exist as 'form'", () => {
@@ -17,5 +17,15 @@ describe("Given SortButton", () => {
   });
   it("should contain a <button> ", () => {
     expect(component.find("button.pizzaSort")).to.have.length(1);
+  });
+  describe("When the button is clicked", () => {
+    beforeEach(() => {
+      let buttonSort = component.find("button");
+      buttonSort.simulate("click", { preventDefault: sinon.spy() });
+    });
+
+    it('should call "handleSortButton" prop', () => {
+      sinon.assert.calledOnce(handleSortButtonSpy);
+    });
   });
 });

@@ -6,7 +6,7 @@ function renderPizzaList(pizzaList = []) {
       return <li key={res}>{res}</li>;
     });
   } else {
-    return <p>Invalid User</p>;
+    return <p>Invalid Pizza</p>;
   }
 }
 const PizzaList = props => {
